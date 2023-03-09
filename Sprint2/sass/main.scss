@@ -8,6 +8,7 @@ $font-family-sans-serif: 'Rubik', sans-serif;
 
 // Navbar 
 $navbar-light-hover-color: $secondary;
+$nav-link-font-size: 0.8rem;
 
 // Tabs color changes
 $nav-tabs-link-active-bg: transparent;
@@ -32,6 +33,10 @@ $accordion-button-active-color: $dark;
 
 // Buttons
 $btn-border-width: 2px;
+$btn-font-size:0.9rem;
+
+$card-border-color: $light;
+
 
 .footer.navbar-nav {
   --#{$prefix}nav-link-color: #{$light};
@@ -42,6 +47,11 @@ $btn-border-width: 2px;
 
 // Bootstrap classes modified
 
+.login.btn{
+  font-size: 0.8rem;
+}
+
+// Hover 
 .btn {
   &-primary {
     @include button-variant($primary, $primary, $hover-border: $primary, $hover-background: $white, $hover-color: $primary);
@@ -59,6 +69,7 @@ $btn-border-width: 2px;
 .nav-tabs .nav-link{
   border: none;
   border-bottom: #{$nav-tabs-border-width} solid $gray-400;
+  font-size: 0.9rem;
 
   &.active {
     border-width: 3px;
@@ -68,8 +79,6 @@ $btn-border-width: 2px;
 .was-validated .form-control:invalid{
   background-image: url(../assets/icon-error.svg);
 }
-
-// svg fill color
 
 .logo {
   & path {
@@ -82,5 +91,49 @@ $btn-border-width: 2px;
     & path {
       fill: $secondary
     }
+  }
+}
+
+// Cards
+.download-card{
+  @extend .card;
+  @extend .shadow;
+  flex-basis: 15rem;
+  padding-block: 2rem 0.5rem;
+  padding-inline: 0;
+  align-items: center;
+  border: 1px solid $light;
+
+  & > img { 
+    display: block;
+    width: 40%;
+    margin-inline: auto;
+    margin-bottom: 0.5rem;
+  }
+  
+  & .card-body{
+    padding: 1rem 0;
+    & .card-title {
+      font-size: 1.4rem;
+    }
+    & .card-text {
+      color: $gray-600;
+    }
+
+    & img {
+      margin-block: 0.5rem 1.2rem;
+    }
+  }
+
+  &:nth-child(1){
+    align-self: flex-start;
+  }
+
+  &:nth-child(2){
+    align-self: center;
+  }
+
+  &:nth-child(3){
+    align-self: flex-end;
   }
 }
