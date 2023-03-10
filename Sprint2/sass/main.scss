@@ -1,6 +1,9 @@
 $primary: #5265E1;
 $secondary: #FA5959;
 
+// Navbar 
+$navbar-light-hover-color: $secondary;
+
 // Tabs color changes
 $nav-link-hover-color: $secondary;        
 $nav-tabs-link-active-border-color: $secondary;
@@ -23,6 +26,7 @@ $accordion-button-active-icon:  url("data:image/svg+xml,<svg xmlns='http://www.w
 
 $nav-link-border-bottom: var($nav-tabs-border-width) solid $secondary;
 $nav-tabs-link-active-color: var($dark);
+
 
 //Add font family
 * {
