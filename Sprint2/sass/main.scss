@@ -30,37 +30,57 @@ $accordion-button-active-color: $dark;
   }
 }
 
-
 // Buttons
 $btn-border-width: 2px;
 
-
+.footer.navbar-nav {
+  --#{$prefix}nav-link-color: #{$light};
+}
 
 @import '../node_modules/bootstrap/scss/bootstrap';
 
 
-.footer.navbar-nav {
-  --#{$prefix}nav-link-color: $light;
-}
-// Classes styles modified
+// Bootstrap classes modified
 
-.btn-primary {
-  @include button-variant($primary, $primary, $hover-border: $primary, $hover-background: $white, $hover-color: $primary);
-}
+.btn {
+  &-primary {
+    @include button-variant($primary, $primary, $hover-border: $primary, $hover-background: $white, $hover-color: $primary);
+  }
 
-.btn-secondary {
-  @include button-variant($secondary, $secondary, $color: $white, $hover-border: $secondary, $hover-background: $white, $hover-color: $secondary);
-}
-
-.btn-light {
-  @include button-variant($light, $light,$hover-border: $dark, $hover-color: $dark);
+  &-secondary {
+    @include button-variant($secondary, $secondary, $color: $white, $hover-border: $secondary, $hover-background: $white, $hover-color: $secondary);
+  }
+  
+  &-light {
+    @include button-variant($light, $light,$hover-border: $dark, $hover-color: $dark);
+  }
 }
 
 .nav-tabs .nav-link{
   border: none;
   border-bottom: #{$nav-tabs-border-width} solid $gray-400;
+
+  &.active {
+    border-width: 3px;
+  }
 }
 
-.nav-tabs .nav-link.active  {
-  border-width: 3px;
+.was-validated .form-control:invalid{
+  background-image: url(../assets/icon-error.svg);
+}
+
+// svg fill color
+
+.logo {
+  & path {
+    fill: $white;
+  }
+}
+
+.logo-facebook, .logo-twitter {
+  &:hover {
+    & path {
+      fill: $secondary
+    }
+  }
 }
