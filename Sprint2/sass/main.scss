@@ -1,17 +1,20 @@
 $primary: #5265E1;
 $secondary: #FA5959;
 
+@import '../node_modules/bootstrap/scss/functions';
+@import '../node_modules/bootstrap/scss/variables';
+
+$font-family-sans-serif: 'Rubik', sans-serif;
+
 // Navbar 
 $navbar-light-hover-color: $secondary;
 
 // Tabs color changes
+$nav-tabs-link-active-bg: transparent;
 $nav-link-hover-color: $secondary;        
+$nav-link-color: $gray-600;
+$nav-tabs-link-active-color: $dark;
 $nav-tabs-link-active-border-color: $secondary;
-$nav-link-color: rgb(100, 100, 100);
-$nav-tabs-border-color: none;
-$nav-tabs-link-hover-border-color:none;
-$nav-tabs-border-width: 0;
-$bs-border-color: $secondary;
 
 // Accordion color changes
 $accordion-button-focus-border-color: none;
@@ -19,16 +22,45 @@ $accordion-button-focus-box-shadow: none;
 $accordion-button-active-bg: transparent;
 $accordion-button-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$primary}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
 $accordion-button-active-icon:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$secondary}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+$accordion-button-active-color: $dark;
+
+.accordion-button {
+  &:hover {
+    color: $secondary;
+  }
+}
+
+
+// Buttons
+$btn-border-width: 2px;
+
 
 
 @import '../node_modules/bootstrap/scss/bootstrap';
 
 
-$nav-link-border-bottom: var($nav-tabs-border-width) solid $secondary;
-$nav-tabs-link-active-color: var($dark);
+.footer.navbar-nav {
+  --#{$prefix}nav-link-color: $light;
+}
+// Classes styles modified
 
+.btn-primary {
+  @include button-variant($primary, $primary, $hover-border: $primary, $hover-background: $white, $hover-color: $primary);
+}
 
-//Add font family
-* {
-    font-family: 'Rubik', sans-serif;
+.btn-secondary {
+  @include button-variant($secondary, $secondary, $color: $white, $hover-border: $secondary, $hover-background: $white, $hover-color: $secondary);
+}
+
+.btn-light {
+  @include button-variant($light, $light,$hover-border: $dark, $hover-color: $dark);
+}
+
+.nav-tabs .nav-link{
+  border: none;
+  border-bottom: #{$nav-tabs-border-width} solid $gray-400;
+}
+
+.nav-tabs .nav-link.active  {
+  border-width: 3px;
 }
