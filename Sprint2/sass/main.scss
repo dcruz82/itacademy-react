@@ -9,13 +9,22 @@ $font-family-sans-serif: 'Rubik', sans-serif;
 // Navbar 
 $navbar-light-hover-color: $secondary;
 $nav-link-font-size: 0.8rem;
+$navbar-dark-color: $gray-600;
+$navbar-dark-hover-color: $secondary;
+
+
+// Active nav
+$offcanvas-horizontal-width: 420px;
+$offcanvas-bg-color: hsla(229, 31%, 21%, 0.9);
+
 
 // Tabs color changes
 $nav-tabs-link-active-bg: transparent;
 $nav-link-hover-color: $secondary;        
-$nav-link-color: $gray-600;
+$nav-link-color: $gray-700;
 $nav-tabs-link-active-color: $dark;
 $nav-tabs-link-active-border-color: $secondary;
+
 
 // Accordion color changes
 $accordion-button-focus-border-color: none;
@@ -35,21 +44,52 @@ $accordion-button-active-color: $dark;
 $btn-border-width: 2px;
 $btn-font-size:0.9rem;
 
-$card-border-color: $light;
-
-
+// Footer links color
 .footer.navbar-nav {
   --#{$prefix}nav-link-color: #{$light};
 }
 
 @import '../node_modules/bootstrap/scss/bootstrap';
 
-
-// Bootstrap classes modified
+// Classes modified
 
 .login.btn{
   font-size: 0.8rem;
 }
+
+
+// Nav 
+.btn-close {
+  background-image: url(../assets/icon-close.svg);
+}
+
+.offcanvas.show{
+  & .offcanvas-header {
+    padding: 1.7rem 2rem 1.1rem;
+  }
+
+  & .nav-item {
+    padding-block: 0.5rem;
+    border-top: 0.5px solid rgba(255, 255, 255, 0.3);
+    &:nth-child(5) {
+      padding-top: 1.3rem;
+    }
+  }
+
+  & .nav-link {
+    font-size: 1.1rem;
+  }
+
+  & .social-links {
+    padding: 1.5rem;
+  }
+
+  & .navbar-nav {
+    padding-inline: 1rem;
+
+  }
+}
+
 
 // Hover 
 .btn {
@@ -80,12 +120,6 @@ $card-border-color: $light;
   background-image: url(../assets/icon-error.svg);
 }
 
-.logo {
-  & path {
-    fill: $white;
-  }
-}
-
 .logo-facebook, .logo-twitter {
   &:hover {
     & path {
@@ -93,6 +127,15 @@ $card-border-color: $light;
     }
   }
 }
+
+
+// Footer logo
+.logo {
+  & path {
+    fill: $white;
+  }
+}
+
 
 // Cards
 .download-card{
